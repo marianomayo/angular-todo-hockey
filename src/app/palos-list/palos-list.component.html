@@ -1,0 +1,35 @@
+<h2>{{titleTable}}</h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Comprar</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let palo of palos">
+        <th scope="row"><img width="50px" height="60px" [src]="palo.imagen" [alt]="palo.Marca" (click)="aumentarFoto(palo)"></th>
+        <td>{{palo.Marca}}</td>
+        <td>{{palo.Modelo}}</td>
+        <td>{{palo.Precio | currency}}</td>
+        <td><span class="alert alert-danger" role="alert" *ngIf="palo.Stock==0; else mostraStock">Sin Stock</span></td>
+        <ng-template #mostraStock>{{palo.Stock}}</ng-template>
+        <td>
+          <button type="button" class="btn btn-outline-info btn-sm" (click)="restar(palo)">-</button>
+            <span>{{palo.cantidadCompra}}</span>
+          <button type="button" class="btn btn-outline-info btn-sm" (click)="sumar(palo)">+</button>
+        </td>
+        <td><button class="btn btn-secondary btn-sm" (click)="comprar(palo)">Comprar</button></td>
+        <td><span *ngIf="palo.Compra==0; else mostraCompra"></span></td>
+        <ng-template #mostraCompra>{{palo.Compra}}</ng-template>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  

@@ -1,4 +1,38 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div>
+  <header>
+    <h1>{{title}}</h1>
+  </header>
+  <nav>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" [routerLink]="['/']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/nuestrospalos']">Nuestros Palos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/carrito']">Carrito de compras</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/contactenos']" >Contactenos</a>
+      </li>
+    </ul>
+  </nav>
+    <section>
+      <div class="justify-content-center">
+      <router-outlet></router-outlet>
+      </div>
+    </section>
+    <footer>
+      <div class="card">
+      <div class="card-header">
+
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>Tandil - Provincia de Buenos Aires</p>
+          <footer class="blockquote-footer">2494685674 <cite title="Source Title"></cite></footer>
+        </blockquote>
+      </div>
+    </div></footer>
+</div>
