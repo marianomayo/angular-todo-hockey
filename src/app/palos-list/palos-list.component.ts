@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { palo } from './palos';
+import { Palos } from './palos';
 @Component({
   selector: 'app-palos-list',
   templateUrl: './palos-list.component.html',
   styleUrls: ['./palos-list.component.scss']
 })
 export class PalosListComponent implements OnInit {
-  palos: palo[] = [
+  palos: Palos[] = [
     {
       Marca: "Grays",
       Modelo: "nano 7",
@@ -15,7 +15,6 @@ export class PalosListComponent implements OnInit {
       Oferta: false,
       imagen: "assets/img/nano7.jpeg",
       cantidadCompra: 0,
-      Compra: 0,
     },{
       Marca: "Vlack",
       Modelo: "Pro Bow",
@@ -24,7 +23,6 @@ export class PalosListComponent implements OnInit {
       Oferta: false,
       imagen: "assets/img/vlackPro.jpeg",
       cantidadCompra: 0,
-      Compra: 0,
     },{
       Marca: "Obo",
       Modelo: "Straing As",
@@ -33,7 +31,6 @@ export class PalosListComponent implements OnInit {
       Oferta: false,
       imagen: "assets/img/oboStraing.jpeg",
       cantidadCompra: 0,
-      Compra: 0,
     },{
       Marca: "Vlack",
       Modelo: "Emuli Bow",
@@ -42,30 +39,17 @@ export class PalosListComponent implements OnInit {
       Oferta: false,
       imagen: "assets/img/oboStraing.jpeg",
       cantidadCompra: 0,
-      Compra: 0,
     }
   ]
-
   titleTable = 'Nuestros Palos';
   constructor() { }
 
   ngOnInit(): void {
   }
-  restar(palo: palo): void{
-    if(palo.cantidadCompra>0){
-      palo.cantidadCompra--;
-    }
-  }
-  sumar(palo: palo): void{
-    if(palo.cantidadCompra<palo.Stock)
-    palo.cantidadCompra++;
+
+  maximoAlcanzado(n: number){
+    alert(n);
   }
 
-  comprar(palo: palo): void{
-    if((palo.cantidadCompra>0)&&(palo.Stock>0)){
-      palo.Compra += palo.cantidadCompra;
-      palo.Stock = palo.Stock - palo.Compra;
-    }
-  }
 
 }

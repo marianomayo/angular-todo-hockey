@@ -1,4 +1,4 @@
-export interface palo {
+export interface Palos {
     Marca: string;
     Modelo: string;
     Precio: number;
@@ -6,5 +6,4 @@ export interface palo {
     Oferta: boolean;
     imagen: string;
     cantidadCompra: number;
-    Compra: number;
 }
