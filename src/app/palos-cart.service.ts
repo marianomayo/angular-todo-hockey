@@ -16,7 +16,7 @@ export class PalosCartService {
   constructor() { }
 
   agregarAlCarro(palos: Palos) {
-    let item: Palos = this._carritoDePalos.find((v1) => v1.Marca = palos.Marca );
+    let item: Palos = this._carritoDePalos.find((v1) => v1.Modelo == palos.Modelo && v1.Marca == palos.Marca  );
     if(!item){
       this._carritoDePalos.push({ ... palos});
     }else {
