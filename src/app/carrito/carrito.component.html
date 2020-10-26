@@ -1,5 +1,5 @@
 <h3>Carrito de Compras</h3>
-<span *ngIf="carritoDePalos.length == 0; else mostrarTablaCarrito"></span>
+<span *ngIf="carritoDePalos.length == 0; else mostrarTablaCarrito">Usted no ha registrado compras hasta el momento</span>
 <ng-template #mostrarTablaCarrito>
     <table class="table table-bordered text-center">
         <thead>

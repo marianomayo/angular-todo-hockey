@@ -33,14 +33,6 @@ export class PalosListComponent implements OnInit {
       Oferta: false,
       imagen: "assets/img/oboStraing.jpeg",
       cantidadCompra: 0,
-    },{
-      Marca: "Vlack",
-      Modelo: "Emuli Bow",
-      Precio: 15000,
-      Stock:6,
-      Oferta: false,
-      imagen: "assets/img/oboStraing.jpeg",
-      cantidadCompra: 0,
     }
   ]
   titleTable = 'Nuestros Palos';
