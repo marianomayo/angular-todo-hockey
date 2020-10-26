@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CarritoComponent } from '../carrito/carrito.component';
+import { PalosCartService } from '../palos-cart.service';
 import { Palos } from './palos';
 @Component({
   selector: 'app-palos-list',
@@ -42,9 +44,17 @@ export class PalosListComponent implements OnInit {
     }
   ]
   titleTable = 'Nuestros Palos';
-  constructor() { }
+  
+  
+  constructor(private cart: PalosCartService) { }
 
   ngOnInit(): void {
+  }
+
+  agregarAlCarro(palos): void {
+    this.cart.agregarAlCarro(palos);
+    palos.Stock -= palos.cantidadCompra;
+    palos.cantidadCompra = 0;
   }
 
   maximoAlcanzado(n: number){

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { observable } from 'rxjs';
+import { PalosCartService } from '../palos-cart.service';
+import { Palos } from '../palos-list/palos';
 
 @Component({
   selector: 'app-carrito',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor() { }
+  carritoDePalos: Palos[] = [];
+  constructor(private cart: PalosCartService) {
+    cart.carritoDePalos.subscribe(c => this.carritoDePalos = c);
+   }
 
   ngOnInit(): void {
   }
