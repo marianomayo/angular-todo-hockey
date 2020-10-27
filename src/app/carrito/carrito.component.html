@@ -1,27 +1,56 @@
-<h3>Carrito de Compras</h3>
-<span *ngIf="carritoDePalos.length == 0; else mostrarTablaCarrito">Usted no ha registrado compras hasta el momento</span>
-<ng-template #mostrarTablaCarrito>
-    <table class="table table-bordered text-center">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Marca</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let palo of carritoDePalos">
-            <th scope="row"><img width="50px" height="60px" [src]="palo.imagen" [alt]="palo.Marca"></th>
-            <td>{{palo.Marca}}</td>
-            <td>{{palo.Modelo}}</td>
-            <td>{{palo.Precio | currency}}</td>
-            <td>{{palo.cantidadCompra}}</td>
-          </tr>
-        </tbody>
-      </table>
-</ng-template>
+<div class="row">
+  <div class="col-7">
+    <h3>Carrito de Compras</h3>
+    <span *ngIf="(carritoDePalos$ | async)?.length == 0; else mostrarTablaCarrito"></span>
+    <ng-template #mostrarTablaCarrito>
+        <table class="table table-striped table-hover text-center">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let palo of carritoDePalos$ |async">
+                <th scope="row"><img width="50px" height="60px" [src]="palo.imagen" [alt]="palo.Marca"></th>
+                <td>{{palo.Marca}}</td>
+                <td>{{palo.Modelo}}</td>
+                <td>{{palo.Precio | currency}}</td>
+                <td>{{palo.cantidadCompra}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </ng-template>
+  </div>
+  <div class="col-5">
+    <h3 class="text-center">Total Compra</h3>
+    <span *ngIf="carritoDePalos.length == 0; else mostrarTotal"></span>
+    <ng-template #mostrarTotal>
+        <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th scope="col">cantidad</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let palo of carritoDePalos">       
+                <td>{{palo.cantidadCompra}}</td>
+                <td>{{palo.Marca}}</td>
+                <td>{{palo.Modelo}}</td>
+                <td>{{palo.Precio | currency}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </ng-template>
+  </div>
+</div>
    
     
 

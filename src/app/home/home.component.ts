@@ -8,7 +8,9 @@ import { infohome } from './infohome';
 export class HomeComponent implements OnInit {
 
 info: infohome[]=[{
-  imagenhome: "assets/img/logohome.jpeg",
+  imagenhome1: "assets/img/logohome.jpeg",
+  imagenhome2: "assets/img/home2.jpg",
+  imagenhome3: "assets/img/home3.jpg",
 }]
   constructor() { }
 

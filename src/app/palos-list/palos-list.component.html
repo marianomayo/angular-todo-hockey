@@ -24,7 +24,7 @@
           <app-input-integer [(cantidad)]="palo.cantidadCompra" [max]="palo.Stock"
            (maximoAlcanzado)="maximoAlcanzado($event)" *ngIf="palo.Stock"></app-input-integer>
           </td>
-        <td><button class="btn btn-secondary btn-sm" (click)="agregarAlCarro(palo)">Comprar</button></td>
+        <td><button class="btn btn-outline-success" (click)="agregarAlCarro(palo)">Comprar</button></td>
       </tr>
     </tbody>
   </table>

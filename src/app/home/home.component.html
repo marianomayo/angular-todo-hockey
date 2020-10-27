@@ -1,8 +1,25 @@
 
-<h2>Bienvenido a la pagina de Hockey numero 1 de Argentina</h2>
+<h2 class="mb-0">Bienvenido a la pagina de Hockey numero 1 de Argentina</h2>
 <br>
-
-    <div class="text-center" *ngFor="let imagen of info">       
-        <img width="600px" [src]="imagen.imagenhome">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" *ngFor="let imagen of info">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="0.0001">
+        <img  [src]="imagen.imagenhome1" class="text-center w-100">
+      </div>
+      <div class="carousel-item">
+        <img [src]="imagen.imagenhome2" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img [src]="imagen.imagenhome3" class="d-block w-100">
+      </div>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">siguiente</span>
+    </a>
+  </div>
 <br>

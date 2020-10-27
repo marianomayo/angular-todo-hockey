@@ -44,9 +44,14 @@ export class PalosListComponent implements OnInit {
   }
 
   agregarAlCarro(palos): void {
-    this.cart.agregarAlCarro(palos);
-    palos.Stock -= palos.cantidadCompra;
-    palos.cantidadCompra = 0;
+    if(palos.cantidadCompra != 0){
+      this.cart.agregarAlCarro(palos);
+      palos.Stock -= palos.cantidadCompra;
+      palos.cantidadCompra = 0;
+    }else{
+      alert("ingrese la cantidad que quiera comprar");
+    }
+    
   }
 
   maximoAlcanzado(n: number){
