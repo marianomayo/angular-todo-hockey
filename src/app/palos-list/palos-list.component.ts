@@ -49,7 +49,7 @@ export class PalosListComponent implements OnInit {
       palos.Stock -= palos.cantidadCompra;
       palos.cantidadCompra = 0;
     }else{
-      alert("ingrese la cantidad que quiera comprar");
+      alert("ingrese una cantidad valida");
     }
     
   }
