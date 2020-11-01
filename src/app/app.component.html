@@ -2,22 +2,9 @@
   <header>
     <h1 class="display-3">{{title}}</h1>
   </header>
-  <nav>
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" [routerLink]="['/']">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/nuestrospalos']">Nuestros Palos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/carrito']">Carrito<span class="badge badge-light"></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  [routerLink]="['/contactenos']" >Contactenos</a>
-      </li>
-    </ul>
-  </nav>
+
+  <app-nav-bar></app-nav-bar>
+  
   <div class="card">
     <div class="card-header">
     </div>

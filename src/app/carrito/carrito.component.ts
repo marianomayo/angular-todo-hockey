@@ -9,12 +9,14 @@ import { Palos } from '../palos-list/palos';
   styleUrls: ['./carrito.component.scss']
 })
 export class CarritoComponent implements OnInit {
-
+//utilizo las dos formas, 1 segun enseñaron, y segundo como dijo juan sobre la convencion. 
   carritoDePalos: Palos[] = [];
   carritoDePalos$: Observable<Palos[]>;
+  total$: Observable<number>;
   constructor(private cart: PalosCartService) {
     this.carritoDePalos$ = cart.carritoDePalos.asObservable();
     cart.carritoDePalos.subscribe(c => this.carritoDePalos = c);
+    this.total$ = cart.total.asObservable();
    }
 
 

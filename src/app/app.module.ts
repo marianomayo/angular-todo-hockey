@@ -9,6 +9,7 @@ import { ContactenosComponent } from './contactenos/contactenos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 import { PalosShopComponent } from './palos-shop/palos-shop.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PalosShopComponent } from './palos-shop/palos-shop.component';
     ContactenosComponent,
     CarritoComponent,
     InputIntegerComponent,
-    PalosShopComponent
+    PalosShopComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

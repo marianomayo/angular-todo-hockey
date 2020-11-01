@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarritoComponent } from '../carrito/carrito.component';
 import { PalosCartService } from '../palos-cart.service';
 import { Palos } from './palos';
+
 @Component({
   selector: 'app-palos-list',
   templateUrl: './palos-list.component.html',
