@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let palo of palos">
-        <th scope="row"><img width="50px" height="60px" [src]="palo.imagen" [alt]="palo.Marca"></th>
+        <td scope="row"><img width="50px" height="60px" [src]="palo.imagen" [alt]="palo.Marca"></td>
         <td>{{palo.Marca}}</td>
         <td>{{palo.Modelo}}</td>
         <td>{{palo.Precio | currency}}</td>

@@ -10,6 +10,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 import { PalosShopComponent } from './palos-shop/palos-shop.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SponsorComponent } from './sponsor/sponsor.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     CarritoComponent,
     InputIntegerComponent,
     PalosShopComponent,
-    NavBarComponent
+    NavBarComponent,
+    SponsorComponent
   ],
   imports: [
     BrowserModule,
