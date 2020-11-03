@@ -25,12 +25,22 @@ export class PalosCartService {
     }else {
       item.cantidadCompra+=palos.cantidadCompra;
     }
-      this._carritoDePalos.forEach(p => {
-      this._total += (p.Precio * p.cantidadCompra);
-    });
-
+    //cualquiera de las dos formas sirve para calcular el total
+    this._total = 0;
+    for(let i=0; i<this._carritoDePalos.length; i++){
+      this._total += this._carritoDePalos[i].Precio * this._carritoDePalos[i].cantidadCompra;
+    }
+    //esta linea es la misma que la 31
+    this._total = this._carritoDePalos.reduce((a,c) => c.Precio * c.cantidadCompra + a, 0);
+    //fun fun function buscar informacion !! 
+    //programacion functional javascript ! 
+    
     this.carritoDePalos.next(this._carritoDePalos); //equivale al emit del evento
     this.cartQuantity.next(this._quantity); // mando a nav bar la cantidad de productos que hay asi lo muestro
     this.total.next(this._total); //envio el total al carrito asi lo publico.
+  }
+
+  private calcularTotal(){
+
   }
 }
