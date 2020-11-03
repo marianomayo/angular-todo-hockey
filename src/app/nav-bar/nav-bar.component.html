@@ -7,11 +7,11 @@
         <a class="nav-link" [routerLink]="['/nuestrospalos']">Nuestros Palos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/carrito']">Carrito
-            <span *ngIf="(quantity) != 0;" class="badge badge-light">{{quantity}}</span></a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link"  [routerLink]="['/contactenos']" >Contactenos</a>
       </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/carrito']"><i class="fa icon" style="font-size:24px">&#xf07a;</i>
+            <span *ngIf="(quantity) != 0;" class="badge badge-primary">{{quantity}}</span></a>
+        </li>
     </ul>
   </nav>

@@ -1,8 +1,12 @@
 <div class="row">
   <div class="col-12">
-    <h3>Carrito de Compras</h3>
-    <span *ngIf="(carritoDePalos$ | async)?.length == 0; else mostrarTablaCarrito"></span>
+    <div class="centrar">
+      <span *ngIf="(carritoDePalos$ | async)?.length == 0; else mostrarTablaCarrito">      
+        <p class="text-center">Usted no ha comprado nada aun. Para comprar pulse <a [routerLink]="['/nuestrospalos']">aqui</a></p>
+      </span>
+    </div>
     <ng-template #mostrarTablaCarrito>
+      <h3>Carrito de Compras</h3>
         <table class="table table-striped table-hover text-center">
             <thead>
               <tr>
@@ -25,7 +29,7 @@
               </tr>
             </tbody>
           </table>
-            <h1>Total A pagar: {{total$ | async |currency}}</h1>        
+            <h3>Total A pagar: {{total$ | async |currency}}</h3>        
     </ng-template>
   </div>
 </div>
